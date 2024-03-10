@@ -1,0 +1,192 @@
+* {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?q=80&w=3274&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+body .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  max-height: 10rem;
+  gap: 10px;
+}
+body .input .search {
+  height: 100%;
+  width: 100%;
+}
+body .input .search .inputbox {
+  height: 3rem;
+  width: 20rem;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 22px;
+  background-color: rgb(255, 255, 255);
+}
+body .input .search .inputbox:hover, body .input .search .btn:hover {
+  border: 2px solid red;
+}
+body .input .search .inputbox1 {
+  height: 4rem;
+  width: 60vw;
+}
+body .input .search .btn {
+  height: 3rem;
+  width: 8rem;
+}
+body .input .search .btn:hover {
+  cursor: pointer;
+}
+body .input .search .btn1 {
+  height: 4rem;
+  width: 10rem;
+  border: none;
+  border-radius: 12px;
+}
+body .container {
+  height: 60%;
+  width: 80%;
+  text-align: center;
+}
+body .container h1 {
+  padding: 5px;
+}
+body .container .output {
+  height: 100%;
+  width: 100%;
+  max-height: 90%;
+  display: grid;
+  grid-template-rows: 1fr 1.7fr;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+body .container .output .outputLeft {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 18px;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+body .container .output .outputLeft .left2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  font-size: 1.2rem;
+}
+body .container .output .outputLeft .left2 .left2inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+  margin: auto 10px;
+  width: 100%;
+}
+body .container .output .outputLeft .left2 .left2inner .data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+}
+body .container .output .outputLeft .left2 .left2inner .data p {
+  font-size: 1.5rem;
+}
+body .container .output .outputRight {
+  border: none;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.5);
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+body .container .output .outputRight .right2 {
+  max-height: 100%;
+}
+body .container .output .outputRight .right2 .rightcontainer {
+  height: 90%;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+body .container .output .outputRight .right2 .rightcontainer .grid1, body .container .output .outputRight .right2 .rightcontainer .grid3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+body .container .output .outputRight .right2 .rightcontainer .grid2 {
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+body .container .output .outputRight .right2 .rightcontainer .grid2 div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+#p1 {
+  font-size: 1.3rem;
+}
+
+#p2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  border-bottom: 1px solid lightgrey;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+
+
+@media (max-width: 500px) {
+  body .input {
+    width: 100%;
+    margin-left: auto;
+  }
+  body .container {
+    width: 100%;
+
+  }
+  .data p {
+    font-size: 1.3rem;
+  }
+  .grid2 div {
+    gap: 15px;
+  }
+  .left2inner{
+    gap: 12px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

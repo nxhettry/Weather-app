@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Weather</title>
+</head>
+<body>
+    <span class="input">
+        Enter your location
+        <form action="/get-weather" method="post" class="search">
+            <input type="text" name="city" class="inputbox1 inputbox" placeholder="Address or City">
+            <button class="btn btn1" type="submit">Search</button>
+        </form>
+    </span>
+    <div class="disp" style="height: 200px; width: 400px; color: white; font-size: 30px;">
+        <% if (locals.content) { %>
+            <%= content %>
+        <% } %>
+        
+    </div>
+    <footer>
+        Made by Nxhettry @2024
+    </footer>
+</body>
+</html>

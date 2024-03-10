@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Weather</title>
+</head>
+<body>
+    <span class="input">
+        Enter your location
+        <form action="/get-weather" method="post" class="search">
+            <input type="text" name="location" class="inputbox1 inputbox" placeholder="Address or City">
+            <button class="btn btn1" type="submit">Search</button>
+        </form>
+
+        
+    </span>
+    <div class="container">
+        <h1><u>Weather Info</u></h1>
+        <div class="output">
+            <div class="outputLeft">
+                <div class="first">
+                    <div class="today">
+                        <%= content.name %>
+                    </div>
+                    <div class="date">
+                        <% let date = new Date(); %>
+                        <%= `${date.getMonth() + 1}/${date.getDate()}` %>
+                    </div>
+                </div>
+                <div class="left2">
+                    <div class="left2inner">
+                        <div class="data">
+                            <p>Min temp</p>
+                            <p><%= `${(content.main.temp_min - 273.15).toFixed(2)}${"\u00B0C"}` %></p>
+                        </div>
+                        <div class="data">
+                            <p>Max temp</p>
+                            <p><%= `${(content.main.temp_max - 273.15).toFixed(2)}${"\u00B0C"}` %></p>
+                        </div>
+                        <div class="data">
+                            <p>Pressure</p>
+                            <p><%= (content.main.pressure)  %>pa</p>
+                        </div>
+                        <div class="data">
+                            <p>Humidity</p>
+                            <p><%= content.main.humidity %></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="outputRight">
+                <div class="first">
+                    <div class="today">
+                        Today's Weather
+                    </div>
+                    <div class="date">
+                        <% let hr = date.getHours(); %>
+                        <% let min = date.getMinutes(); %>
+                        
+                        <%= `${hr}:${min}` %>
+                    </div>
+                </div>
+                <div class="right2">
+                    <div class="rightcontainer">
+                        <div class="grid1"><img src="<%= `https://openweathermap.org/img/wn/${content.weather[0].icon}.png` %>" alt="icon" height="80px" width="80px">
+                            <%= content.weather[0].main %></div>
+                        <div class="grid2">
+                            <div>
+                                <p id="p1">Wind</p>
+                                <p id="p2">SSE <%= content.wind.speed %> km/h</p>
+                            </div>
+                            <div>
+                                <p id="p1">Wind Gusts</p>
+                                <p id="p2">
+                                    <% if (locals.content.wind.gust) { %>
+                                        <%= content.wind.gust %>
+                                    <% } else {%>
+                                        unavailable
+                                    <% } %>
+                                </p>
+                            </div>
+                            <div>
+                                <p id="p1">Wind Direction</p>
+                                <p id="p2"><%= `${content.wind.deg}${"\u00B0"}` %></p>
+                            </div>
+                        </div>
+                        <div class="grid3">
+                            <%= `${(content.main.temp - 273.15).toFixed(2)}${"\u00B0C"}` %>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer>
+    Made by Nxhettry @2024
+</footer>
+</body>
+</html>
